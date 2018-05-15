@@ -1,25 +1,26 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = "mutual play cover just few amused north robot gentle popular slam thought";//"unlined reconfirm regroup pried founding dilation epidural sarcasm clever decode washbowl almanac";
-var mnemonicDev = "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";//"net habit matrix ritual fit crucial idea print tree expose fever tuna";
+var infuraAPIKey = "e5FVKzbpIbo1QpJLgN6l";
+var mnemonic = "enter resource report gospel glad seminar gravity slight party improve meadow devote";
+
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
   networks: {
     ropsten: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/e5FVKzbpIbo1QpJLgN6l")
+        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/"+infuraAPIKey);
       },
-      host: "127.0.0.1",
-      port: 8180,
+      // host: "127.0.0.1",
+      // port: 8180,
       network_id: 3,
 
     },
-    development: {
-        provider: function() {
-          return new HDWalletProvider(mnemonicDev, "http://127.0.0.1:7545")
-        },
-        // host: "127.0.0.1",
-        // port: 7545,
+    develop: {
+        // provider: function() {
+        //   return new HDWalletProvider(mnemonicDev, "http://127.0.0.1:7545")
+        // },
+        host: "127.0.0.1",
+        port: 7545,
         network_id: "*" // Match any network id
       }
   },
